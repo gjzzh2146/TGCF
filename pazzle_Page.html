@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>萬神窟雕像</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+  <style>
+	body {
+		background-color:#94886F;
+	}
+	#pazzle1{
+		display: none;
+	}
+    #pazzle1, #pazzle2 {
+      border: 1px solid white;
+      width: 550px;
+      min-height: 20px;
+      list-style-type: none;
+      margin: 0;
+      padding: 5px 0 0 0;
+      float: left;
+      margin-right: 50px;
+    }
+	#pazzle3{
+	  border: 1px solid white;
+      width: 550px;
+      min-height: 20px;
+      list-style-type: none;
+      margin: 0;
+      padding: 5px 0 0 0;
+      float: left;
+      margin-right: 50px;
+	}
+	#pazzle2 li{
+	  margin: 0 5px 2px 32px;
+      font-size: 1.2em;
+      width: 486px;
+      height: 72px;
+      background-size: cover; /* 确保背景图片覆盖整个元素 */
+      background-position: center; /* 确保背景图片居中 */
+	}
+    #pazzle1 li, #pazzle3 li {
+      margin: 0 5px 2px 32px;
+      font-size: 1.2em;
+      width: 486px;
+      height: 72px;
+      background-size: cover; /* 确保背景图片覆盖整个元素 */
+      background-position: center; /* 确保背景图片居中 */
+    }
+    #dialog {
+      display: none;
+    }
+	
+	/* 设置背景图片 */
+    #pazzle2 li#a { background-image: url("pazzle/pazzle2-1.jpg"); }
+    #pazzle2 li#b { background-image: url("pazzle/pazzle2-2.jpg"); }
+    #pazzle2 li#c { background-image: url("pazzle/pazzle2-3.jpg"); }
+    #pazzle2 li#d { background-image: url("pazzle/pazzle2-4.jpg"); }
+    #pazzle2 li#e { background-image: url("pazzle/pazzle2-5.jpg"); }
+	#pazzle2 li#f { background-image: url("pazzle/pazzle2-6.jpg"); }
+	#pazzle2 li#g { background-image: url("pazzle/pazzle2-7.jpg"); }
+	#pazzle2 li#h { background-image: url("pazzle/pazzle2-8.jpg"); }
+	
+	#pazzle3 li#aaa { background-image: url("pazzle/pazzle1-1.jpg"); }
+    #pazzle3 li#bbb { background-image: url("pazzle/pazzle1-2.jpg"); }
+    #pazzle3 li#ccc { background-image: url("pazzle/pazzle1-3.jpg"); }
+    #pazzle3 li#ddd { background-image: url("pazzle/pazzle1-4.jpg"); }
+    #pazzle3 li#eee { background-image: url("pazzle/pazzle1-5.jpg"); }
+	#pazzle3 li#fff { background-image: url("pazzle/pazzle1-6.jpg"); }
+	#pazzle3 li#ggg { background-image: url("pazzle/pazzle1-7.jpg"); }
+	#pazzle3 li#hhh { background-image: url("pazzle/pazzle1-8.jpg"); }
+	#pazzle3 li#iii { background-image: url("pazzle/pazzle1-9.jpg"); }
+	
+/*初始dialog*/
+#initial_dialog{
+    border: 1px solid #ccc;
+    padding: 2em;
+    width: 600px;
+    max-width: 80%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+#initial_dialog p {
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+}
+#initial_button {
+    height:45px;
+	width:150px;
+    display: block;
+    margin-left: auto;
+    padding: 0.5em 1em;
+    border: none;
+    background-color: #94886F;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+#initial_button:hover {
+    background-color: #0056b3;
+}
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+  <script>
+	$(document).ready(function(){
+	
+////////////////////////////初始對話框////////////////////////////////////////////////////
+		// 選取對話框和關閉按鈕
+		var $dialog = $('#initial_dialog');
+		var $closeButton = $('#initial_button');
+		// 顯示對話框
+		$dialog[0].showModal();
+		// 關閉對話框的事件監聽
+		$closeButton.on('click', function() {
+        $dialog[0].close();
+		});
+	});
+    $(function() {
+      $("#pazzle1, #pazzle2, #pazzle3").sortable({
+        connectWith: ".connectedSortable",
+        update: function(event, ui) {
+          checkOrder();
+        }
+      }).disableSelection();
+
+      $("#dialog").dialog({
+        autoOpen: false,
+        modal: true,
+        buttons: {
+          "OK": function() {
+            $(this).dialog("close");
+          }
+        }
+      });
+    });
+
+    function checkOrder() {
+      const order1 = $("#pazzle2 li").map(function() { return this.id; }).get().join('');
+      const order2 = $("#pazzle3 li").map(function() { return this.id; }).get().join('');
+
+      if (order1 === 'abcdefgh' && order2 === 'aaabbbcccdddeeefffggghhhiii') {
+        $("#dialog").dialog("open");
+      }
+    }
+  </script>
+</head>
+<body>
+  <ul id="pazzle1" class="connectedSortable">
+    <li class="ui-state-default" id='11'>Item 1</li>
+    <li class="ui-state-default" id='22'>Item 2</li>
+    <li class="ui-state-default" id='33'>Item 3</li>
+    <li class="ui-state-default" id='44'>Item 4</li>
+    <li class="ui-state-default" id='55'>Item 5</li>
+	<li class="ui-state-default" id='66'>Item 6</li>
+	<li class="ui-state-default" id='77'>Item 7</li>
+	<li class="ui-state-default" id='88'>Item 8</li>
+	<li class="ui-state-default" id='99'>Item 9</li>
+  </ul>
+  
+  <ul id="pazzle2" class="connectedSortable">
+    <li id='a'> </li>
+    <li id='g'> </li>
+    <li id='c'> </li>
+    <li id='d'> </li>
+    <li id='e'> </li>
+	<li id='b'> </li>
+	<li id='f'> </li>
+	
+	<li id='h'> </li>
+  </ul>
+  <ul id="pazzle3" class="connectedSortable">
+    
+    <li id='bbb'> </li>
+	<li id='eee'> </li>
+    <li id='ccc'> </li>
+    <li id='ddd'> </li>
+    <li id='hhh'> </li>
+	<li id='fff'> </li>
+	<li id='ggg'> </li>
+	
+	<li id='iii'> </li>
+	<li id='aaa'> </li>
+  </ul>
+
+	<!--初始對話框-->
+	<dialog id="initial_dialog">
+		<p>歡迎來到花城一手打造的萬神窟<br>來體驗一下如何雕刻這些神像吧~<br>噢，當然這只能算是簡易版的啦<br>你可以拖動圖片方塊還原出雕像的樣貌，開始吧！</p>
+		<button id="initial_button"><big>沒問題！</big></button>
+	</dialog>
+
+  <div id="dialog" title="success!!!">
+    <p>恭喜完成了所有拼圖！</p>
+  </div>
+</body>
+</html>
