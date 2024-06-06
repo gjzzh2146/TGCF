@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset = "utf-8" >
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>黑暗料理</title>
+		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css"> 
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="cook.css">
+		<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+		<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+		<script src="cook.js"></script>
+	</head>
+	<body> 
+	<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+			<br><h4><b>謝憐食譜</b></h4>
+			<p>1. <b>百年好合羹：</b>紅棗、帶殼花生、桂圓、帶蓮蓬的蓮子、薑、糖適量、水適量&emsp;（嗯...這口感如何想必不用我多說。果然是節儉的謝道長啊。）</p>
+			<p>2. <b>玉潔冰清丸：</b>雞蛋、麵粉、白菜、胡蘿蔔、薑、很多水、糖、鹽、醋&emsp;（別看這賣相正常，你猜為什麼加了很多水卻變丸子。）</p>
+			<p>3. <b>萬紫千紅小炒肉：</b>肉、紫高麗菜、胡蘿蔔、辣椒、薑、醬油、糖&emsp;（食材正常，調味成謎，烹煮過程成謎）</p>
+			<p>如果殿下有其他想做的料理，也可以自己挑選食材組合</p>
+			<p><big><b>拖動食材放入鍋子</b></big></p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+			<p id="mantao" class="ui-widget-content "></p>
+			<p id="whiteVeg" class="ui-widget-content "></p>
+			<p id="purpleVeg" class="ui-widget-content "></p>
+			<p id="redFruit" class="ui-widget-content "></p>
+			<p id="peanut" class="ui-widget-content "></p>
+			<p id="guiyun" class="ui-widget-content "></p>
+			<p id="liangzi" class="ui-widget-content "></p>
+			<p id="egg" class="ui-widget-content "></p>
+			<p id="flour" class="ui-widget-content "></p>
+			<p id="carrot" class="ui-widget-content "></p>
+			<p id="ginger" class="ui-widget-content "></p>
+			<p id="meat" class="ui-widget-content "></p>
+			<p id="chili" class="ui-widget-content "></p>
+			<p id="sugar" class="ui-widget-content "></p>
+			<p id="salt" class="ui-widget-content "></p>
+			<p id="soy-sauce" class="ui-widget-content "></p>
+			<p id="water" class="ui-widget-content "></p>
+			<p id="chu" class="ui-widget-content "></p>
+			<p id="yellowgua" class="ui-widget-content "></p>
+			<p id="fish" class="ui-widget-content "></p>
+		</div>
+	</div>	
+	<div class="row">	
+		<div class="col-sm-12">
+			<button id='start'>開始煮飯</button>
+			<button id='restart'>重煮一次</button>
+			<div id="pot" class="ui-widget-header">
+				<h4>鍋子</h4>
+			</div>
+		</div>
+	</div>	
+	</div>
+	
+	<div class="overlay" id="overlay"></div>
+	<div class="black-screen"></div>
+	<div class="pink-screen"></div>
+	<div class="BNHHG"></div>
+	<div class="YJBQW"></div>
+	<div class="WZQHXCR"></div>
+	<div id="mantao_dialog">
+        <p>恭喜殿下做出了饅頭！快請大家嘗一嘗吧！</p>
+    </div>
+	<div id="BNHHG_dialog">
+        <p>恭喜殿下做出了百年好合羹！快請大家嘗一嘗吧！</p>
+    </div>
+	<div id="YJBQW_dialog">
+        <p>恭喜殿下做出了玉潔冰清丸！快請大家嘗一嘗吧！</p>
+    </div>
+	<div id="WZQHXCR_dialog">
+        <p>恭喜殿下做出了萬紫千紅小炒肉！快請大家嘗一嘗吧！</p>
+    </div>
+	<div id="changeRole_dialog">
+        <p>好的，你現在不是謝憐了。<br>請選擇你的角色。</p>
+    </div>
+	<div id="die_dialog">
+        <p>你食物中毒了！！！<br>趕緊去找大夫治治吧！！！</p>
+    </div>
+	<div id="happy_dialog">
+        <p>謝謝哥哥，料理非常好吃<br>我很喜歡</p>
+    </div>
+	<div id="qq_dialog">
+        <p>真是可惜，失去了一個毒倒大家的機會</p>
+    </div>
+	
+	</body>
+</html>
