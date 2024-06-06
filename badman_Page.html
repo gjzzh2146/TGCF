@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打跑戚容</title>
+    
+	<style>
+		/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+	background: url("greenman_background.jpg");
+	background-size: cover; /* Ensure the image covers the entire div */
+    background-position: center; /* Center the image */
+}
+body::after {
+	right: 0;
+	background: url("greenman_background.jpg"); /* 背景图片路径 */
+	background-size: cover; /* Ensure the image covers the entire div */
+    background-position: center; /* Center the image */
+	display: flex;
+	opacity: 0.5;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    position: relative;
+}
+
+#image1 {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+}
+
+#image2 {
+    position: absolute;
+    top: 100px;
+    right: 20px;
+}
+
+
+.fixed-image {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+button {
+	background-color:#7DCF95;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+	border:1px solid #256825;
+}
+.blank{
+	opacity:0;
+}
+#hitButton,#chaseButton {
+    top: 120px; /* 調整這個值來讓兩個按鈕垂直排列 */
+}
+	</style>
+</head>
+<body>
+    <div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<button class="blank">隱藏按鈕隱藏按鈕隱藏按鈕隱藏按鈕隱藏按鈕隱藏按鈕隱藏按鈕隱藏按鈕</button>
+				<button id="chaseButton">追他！！！</button>
+				<button id="hitButton">打他！！！</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-9">
+				<img id="image1" src="badman_badman.jpeg" alt="戚容" height='200'>
+				<img id="image2" src="Eeming.png" alt="厄命" height='150'>
+			</div>
+			<div class="col-sm-3">
+				<img id="image3" src="1716261308560.png" alt="示意圖" width='300'>
+			</div>
+		</div>
+	</div>
+	
+    <script>
+	// script.js
+document.addEventListener('DOMContentLoaded', () => {
+    const image1 = document.getElementById('image1');
+    const image2 = document.getElementById('image2');
+    const chaseButton = document.getElementById('chaseButton');
+    const hitButton = document.getElementById('hitButton');
+
+    let image1Top = 100;
+    let image2Top = 100;
+    let image2Right = 20;
+    let opacity = 1;
+
+    const moveImages = () => {
+        image1Top += 50;
+        image1.style.top = `${image1Top}px`;
+
+        image2Top += 50;
+        image2Right += 200;
+        image2.style.top = `${image2Top}px`;
+        image2.style.right = `${image2Right}px`;
+
+        checkCollision();
+        checkOpacity();
+    };
+
+    const checkCollision = () => {
+        const image1Rect = image1.getBoundingClientRect();
+        const image2Rect = image2.getBoundingClientRect();
+
+        const isCollision = (
+            image1Rect.left < image2Rect.right &&
+            image1Rect.right > image2Rect.left &&
+            image1Rect.top < image2Rect.bottom &&
+            image1Rect.bottom > image2Rect.top
+        );
+
+        if (isCollision) {
+            disableChaseButton();
+        }
+    };
+
+    const checkOpacity = () => {
+        if (opacity <= 0) {
+            alert('戚容已經被打跑了!');
+        }
+    };
+
+    const disableChaseButton = () => {
+        chaseButton.disabled = true;
+    };
+
+    chaseButton.addEventListener('click', () => {
+        moveImages();
+    });
+
+    hitButton.addEventListener('click', () => {
+        const image1Rect = image1.getBoundingClientRect();
+        const image2Rect = image2.getBoundingClientRect();
+
+        const isCollision = (
+            image1Rect.left < image2Rect.right &&
+            image1Rect.right > image2Rect.left &&
+            image1Rect.top < image2Rect.bottom &&
+            image1Rect.bottom > image2Rect.top
+        );
+
+        if (isCollision) {
+            opacity -= 0.1;
+            if (opacity <= 0) {
+                opacity = 0;
+            }
+            image1.style.opacity = opacity;
+        }
+
+        moveImage2OnHit();
+        checkOpacity();
+    });
+
+    const moveImage2OnHit = () => {
+        image2Right = image2Right - 10;
+        image2.style.right = `${image2Right}px`;
+        setTimeout(() => {
+            image2Right = image2Right + 10;
+            image2.style.right = `${image2Right}px`;
+        }, 100);
+    };
+});
+
+</script>
+	
+</body>
+</html>

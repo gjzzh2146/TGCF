@@ -1,0 +1,311 @@
+body {
+    background-size: cover; /* Ensure the image covers the entire div */
+    background-position: center; /* Center the image */
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	background: url("cook_background2.jpg");
+}
+.black-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+	height: 100%;
+	background-color: black;
+	z-index: 100;
+	display: none;
+}
+.pink-screen {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: pink;
+	z-index: 100;
+	display: none;
+}
+.BNHHG{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url('omg1.jpeg');
+	z-index: 100;
+	display: none;
+	background-size: cover; /* Ensure the image covers the entire div */
+    background-position: center; /* Center the image */
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+}
+.YJBQW{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url('omg2.jpeg');
+	z-index: 100;
+	display: none;
+	background-size: cover; /* Ensure the image covers the entire div */
+    background-position: center; /* Center the image */
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+}
+.WZQHXCR{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url('omg3.jpeg');
+	z-index: 100;
+	display: none;
+	background-size: cover; /* Ensure the image covers the entire div */
+    background-position: center; /* Center the image */
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+}
+#mantao { 
+	background-image: url("cook/mantao.jpg"); /* Add the background image */
+    background-size: cover; /* Ensure the image covers the entire div */
+    background-position: center; /* Center the image */
+	width: 100px; 
+	height: 100px; 
+	padding: 0.5em; 
+	float: left; 
+	margin: 10px 10px 10px 0;
+	z-index: 1; 
+}
+#whiteVeg { 
+	background-image: url("cook/greenvegetable.jpg"); /* Add the background image */
+    background-size: cover; /* Ensure the image covers the entire div */
+    background-position: center; /* Center the image */
+	width: 100px; 
+	height: 100px; 
+	padding: 0.5em; 
+	float: left; 
+	margin: 10px 10px 10px 0;
+	z-index: 1; 
+}
+#purpleVeg { 
+	background-image: url("cook/purplevegetable.jpg"); /* Add the background image */
+    background-size: cover; /* Ensure the image covers the entire div */
+    background-position: center; /* Center the image */
+	width: 100px; 
+	height: 100px; 
+	padding: 0.5em; 
+	float: left; 
+	margin: 10px 10px 10px 0;
+	z-index: 1; 
+}
+#redFruit { 
+	background-image: url("cook/redzao.jpg"); /* Add the background image */
+    background-size: cover; /* Ensure the image covers the entire div */
+    background-position: center; /* Center the image */
+	width: 100px; 
+	height: 100px; 
+	padding: 0.5em; 
+	float: left; 
+	margin: 10px 10px 10px 0;
+	z-index: 1; 
+}
+#peanut { 
+	background-image: url("cook/peanut.jpg"); /* Add the background image */
+    background-size: cover; /* Ensure the image covers the entire div */
+    background-position: center; /* Center the image */
+	width: 100px; 
+	height: 100px; 
+	padding: 0.5em; 
+	float: left; 
+	margin: 10px 10px 10px 0;
+	z-index: 1; 
+}
+#guiyun { 
+	background-image: url("cook/guiyun.jpg"); /* Add the background image */
+    background-size: cover; /* Ensure the image covers the entire div */
+    background-position: center; /* Center the image */
+	width: 100px; 
+	height: 100px; 
+	padding: 0.5em; 
+	float: left; 
+	margin: 10px 10px 10px 0;
+	z-index: 1; 
+}
+#liangzi { 
+	background-image: url("cook/liangzi.jpg"); /* Add the background image */
+    background-size: cover; /* Ensure the image covers the entire div */
+    background-position: center; /* Center the image */
+	width: 100px; 
+	height: 100px; 
+	padding: 0.5em; 
+	float: left; 
+	margin: 10px 10px 10px 0;
+	z-index: 1; 
+}
+#egg { 
+	background-image: url("cook/egg.jpg"); /* Add the background image */
+    background-size: cover; /* Ensure the image covers the entire div */
+    background-position: center; /* Center the image */
+	width: 100px; 
+	height: 100px; 
+	padding: 0.5em; 
+	float: left; 
+	margin: 10px 10px 10px 0;
+	z-index: 1; 
+}
+#flour { 
+	background-image: url("cook/flour.jpg"); /* Add the background image */
+    background-size: cover; /* Ensure the image covers the entire div */
+    background-position: center; /* Center the image */
+	width: 100px; 
+	height: 100px; 
+	padding: 0.5em; 
+	float: left; 
+	margin: 10px 10px 10px 0;
+	z-index: 1; 
+}
+#carrot { 
+	background-image: url("cook/carrot.jpg"); /* Add the background image */
+    background-size: cover; /* Ensure the image covers the entire div */
+    background-position: center; /* Center the image */
+	width: 100px; 
+	height: 100px; 
+	padding: 0.5em; 
+	float: left; 
+	margin: 10px 10px 10px 0;
+	z-index: 1; 
+}
+#ginger { 
+	background-image: url("cook/ginger.jpg"); /* Add the background image */
+    background-size: cover; /* Ensure the image covers the entire div */
+    background-position: center; /* Center the image */
+	width: 100px; 
+	height: 100px; 
+	padding: 0.5em; 
+	float: left; 
+	margin: 10px 10px 10px 0;
+	z-index: 1; 
+}
+#meat { 
+	background-image: url("cook/meat.jpg"); /* Add the background image */
+    background-size: cover; /* Ensure the image covers the entire div */
+    background-position: center; /* Center the image */
+	width: 100px; 
+	height: 100px; 
+	padding: 0.5em; 
+	float: left; 
+	margin: 10px 10px 10px 0;
+	z-index: 1; 
+}
+#chili { 
+	background-image: url("cook/chili.jpg"); /* Add the background image */
+    background-size: cover; /* Ensure the image covers the entire div */
+    background-position: center; /* Center the image */
+	width: 100px; 
+	height: 100px; 
+	padding: 0.5em; 
+	float: left; 
+	margin: 10px 10px 10px 0;
+	z-index: 1; 
+}
+#sugar { 
+	background-image: url("cook/sugar.jpg"); /* Add the background image */
+    background-size: cover; /* Ensure the image covers the entire div */
+    background-position: center; /* Center the image */
+	width: 100px; 
+	height: 100px; 
+	padding: 0.5em; 
+	float: left; 
+	margin: 10px 10px 10px 0;
+	z-index: 1; 
+}
+#salt { 
+	background-image: url("cook/salt.jpg"); /* Add the background image */
+    background-size: cover; /* Ensure the image covers the entire div */
+    background-position: center; /* Center the image */
+	width: 100px; 
+	height: 100px; 
+	padding: 0.5em; 
+	float: left; 
+	margin: 10px 10px 10px 0;
+	z-index: 1; 
+}
+#soy-sauce { 
+	background-image: url("cook/Soy-Sauce.jpg"); /* Add the background image */
+    background-size: cover; /* Ensure the image covers the entire div */
+    background-position: center; /* Center the image */
+	width: 100px; 
+	height: 100px; 
+	padding: 0.5em; 
+	float: left; 
+	margin: 10px 10px 10px 0;
+	z-index: 1; 
+}
+#water { 
+	background-image: url("cook/water.jpg"); /* Add the background image */
+    background-size: cover; /* Ensure the image covers the entire div */
+    background-position: center; /* Center the image */
+	width: 100px; 
+	height: 100px; 
+	padding: 0.5em; 
+	float: left; 
+	margin: 10px 10px 10px 0;
+	z-index: 1; 
+}
+#chu { 
+	background-image: url("cook/chu.jpg"); /* Add the background image */
+    background-size: cover; /* Ensure the image covers the entire div */
+    background-position: center; /* Center the image */
+	width: 100px; 
+	height: 100px; 
+	padding: 0.5em; 
+	float: left; 
+	margin: 10px 10px 10px 0;
+	z-index: 1; 
+}
+#yellowgua { 
+	background-image: url("cook/guagua.jpg"); /* Add the background image */
+    background-size: cover; /* Ensure the image covers the entire div */
+    background-position: center; /* Center the image */
+	width: 100px; 
+	height: 100px; 
+	padding: 0.5em; 
+	float: left; 
+	margin: 10px 10px 10px 0;
+	z-index: 1; 
+}
+#fish { 
+	background-image: url("cook/fish.jpg"); /* Add the background image */
+    background-size: cover; /* Ensure the image covers the entire div */
+    background-position: center; /* Center the image */
+	width: 100px; 
+	height: 100px; 
+	padding: 0.5em; 
+	float: left; 
+	margin: 10px 10px 10px 0;
+	z-index: 1; 
+}
+#pot {width: 100%; height: 150px; padding: 0.5em; float: left; margin: 10px;}
+.ingredient{
+    display: inline-block;
+    margin: 5px;
+ }
+#pot .ingredient {
+    position: absolute;
+}
+#BNHHG_dialog,#YJBQW_dialog,#WZQHXCR_dialog,#changeRole_dialog,#mantao_dialog{display: none;}
+#die_dialog{display: none;z-index: 105;width:500px;}
+#happy_dialog{display: none;z-index: 105;width:500px;}
+#qq_dialog{display: none;}
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
