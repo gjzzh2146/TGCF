@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset = "utf-8" >
+		<title>天官賜福</title>
+		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css"> 
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="home.css">
+		<script src="home_page.js"></script>
+	</head>
+	<body> 
+	<!--初始對話框-->
+		<dialog id="initial_dialog">
+			<p>歡迎進入本系統一手打造的小說世界，這裡有許多的驚喜等你收取。<br>點擊人物卡牌獲得詳細資訊。<br>注意一些暗示。雙擊左鍵或讓游標懸停數息，可以觸發意想不到的任務！<br>準備好開始這趟旅程了嗎？<br><b>祝道友此去，一路順風，</b></p>
+			<button id="initial_button">天官賜福，百無禁忌！</button>
+		</dialog>
+	<!--'黑暗料理'對話框-->
+	<div class="overlay" id="overlay"></div>
+    <div id="cook_dialog">
+        <p>恭喜你拿到了謝憐體驗卡一張，想開始製作黑暗料理嗎？</p>
+        <button id="cook_accept">試試吧</button>
+        <button id="cook_decline">不了，我的廚藝挺好的</button>
+    </div>
+	<div id="cook_decline_dialog">
+        <p>好吧，你放棄了一個毒倒大家的機會。</p>
+    </div>
+	<!--'拯救蒼生'對話框-->
+    <div id="roleplay_dialog">
+        <p>你觸發了支線任務：情境體驗，要接受並前往嗎？</p>
+        <button id="roleplay_accept">好，我接受</button>
+        <button id="roleplay_decline">婉拒了，我心臟不好</button>
+    </div>
+	<!--'萬神窟'對話框-->
+    <div id="pazzle_dialog">
+        <p>你觸發了支線任務：萬神窟雕像，要接受並前往嗎？</p>
+        <button id="pazzle_accept">去啊哪次不去</button>
+        <button id="pazzle_decline">不要，我怕被打</button>
+    </div>
+	<div id="pazzle_decline_dialog">
+        <p>...不會因為這樣就打你。<br>除非你是那兩個廢物^^</p>
+    </div>
+	<!--'打戚容'對話框-->
+    <div id="badman_dialog">
+        <p>完了完了，你惹到戚容了！<br>他雖然總被嫌棄，可到底是近絕，你也打不過呀！<br>現在有兩個解決方法，一個是滿足戚容的惡趣味，給他準備倒掛屍林當供品<br>一個是尋求花城的幫忙。<br>那麼，這位善良的道友，你想做出什麼選擇呢？</p>
+        <button id="badman_accept">上供</button>
+        <button id="badman_decline">花城幫我！</button>
+		<button id="badman_run">打不過，我跑還不行嗎</button>
+    </div>
+	<div id="badman_accept_dialog">
+        <p>不可以哦，就算在玄幻世界也要當一個遵守公序良俗的好公民。<br>請重新選擇^^</p>
+		<button id="badman_accept_ok">...好的</button>
+    </div>
+	<div id="badman_run_dialog">
+        <p>哈哈哈哈哈哈哈！害怕本王了吧！<br>你這個懦弱的傢伙！</p>
+    </div>
+		
+<!--主頁面開始-->
+		<div class="container">
+			<div class="topColumn">
+				<img src="LOGO_TEXT.png" alt="Left Image" class="left-img">
+				<img src="LOGO.jpg" alt="Right Image" class="right-img">
+			</div>
+			<div id='author' >
+				<p><b>作者：墨香銅臭</b></p>
+			</div>
+			<div class="story" >
+				<h3><b>背景介紹</b></h3>
+				<p class='story_text'><b>天界有一位飛升了三次的神官。<br>八百年前，中原有一個仙樂古國。他們的太子殿下天資聰穎，十七歲外出遊歷時，斬殺了作惡已久的妖怪，從而得道飛升。<br>
+					花冠武神，一手仗劍，一手持花。宮觀廟宇遍佈，一時風頭無兩。<br>
+					好景不常，仙樂多年後即瀕臨滅國，太子身為神官，插手凡間事務，因種種原因被貶下凡，仙樂也因他干預而加快覆滅。<br>最後他的信徒就只剩下一位。<br>
+					隨後，太子又短暫的飛升了一次，迅速被貶。此後，他便在凡間遊歷八百年，氣運散盡，法力全無。<br>
+					原本錦衣玉食的天之驕子，撿了八百年的破爛，如今從地上撿起的饅頭都能安然入口。<br>
+					有一天，他又又又飛升了！震撼了整個天庭的神官。<br>故事，從此開始。</b></p>
+			</div>
+			<div  class='role'>
+				<h3><b>兩位主角</b></h3>
+			</div>
+			<div class="row">
+				<div class="col-sm-6">
+					<div id='Xieliang'>
+						<img src="img_xie_lian.png" alt="謝憐" class="image aaa" width="270">
+						<div id='title_Xieliang'>
+							<h3><big><b>謝憐</b></big></h3>
+							<p>仙樂太子、花冠武神</p>
+						</div>
+					</div>
+					<div id='text_Xieliang'>常年戴著一頂竹編斗笠，來來去去就那幾件一模一樣的白道袍。<br>心性堅韌，溫潤和善。偶爾有點冷幽默，常常反省自己年輕時的狂言，但其實流落人間的八百年來一直都在盡自己的努力在拯救蒼生。
+											<br><br>通靈口令：背誦一百遍道德經便是了。<br>
+											武器：若邪綾、芳心劍、<span id='cook'><u>黑暗料理</u></span><br>興趣：花城、下廚<br>專長：撿破爛、<span id="roleplay"><u>拯救蒼生</u></span>、胸口碎大石<br>名言：<br>
+											身在無間，心在桃源。<br>我要拯救蒼生！<br>如果不知道怎麼活下去，那麼就為了我活下去吧。<br>飛升不如收破爛<br>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div id='Huacheng'>
+						<img src="img_hua_cheng.png" alt="花城" class="image bbb" width="270" id='Huacheng-img'>
+						<div id='title_Huacheng'>
+							<h3><big><b>花城</b></big></h3>
+							<p>血雨探花、鬼市之主</p>
+						</div>
+					</div>
+					<div id='text_Huacheng'>謝憐專屬稱呼：<u><span id='sanran'>三郎</span></u><br><br>紅衣銀飾，頭髮上有一顆紅珊瑚珠，全身花里胡哨叮鈴噹啷的。<br>天煞孤星的命格，小時候受盡虐待，曾被一位金枝玉葉的貴人所救。
+											死後帶著信念，在銅爐山煉獄殺出重圍，成為絕境鬼王。<br>看除了謝憐以外的生物都不順眼，尤其是曾經為難過謝憐的神官。<br><br>
+											通靈口令：（本書最大未解之謎）<br>武器：厄命、銀蝶<br>興趣：守護謝憐<br>專長：書法(?)、打架、繪畫、雕刻 -- 作品：<span id="pazzle"><u>萬神窟</u></span><br>
+											名言：<br>殿下，我永遠是你最忠誠的信徒。<br>為你戰死是我至高無上的榮耀。<br>如果你的夢想是拯救蒼生，那我的夢想便唯你一人。<br>若是我，骨灰送出去，管他是想挫骨揚灰還是撒著玩</div>
+				</div>
+			</div>
+			<div >
+				<h3 class='Ghost'><b>四大絕境鬼王 （排名分先後）</b></h3>
+				<p id='ps'><b>p.s.鬼界實力排名：絕>凶>厲>惡</b></p>
+			</div>
+			<div class="row">
+				<div class="col-sm-6">
+					<div id="Redred">
+						<img src="red.png" alt="血雨探花" class="a-1" height="141">
+						<div id='title_Redred'>
+							<h3><big><b>血雨探花</b></big></h3>
+						</div>
+					</div>
+					<div id="text_Redred">鬼界第一大佬、銅爐山藝術生（誤）<br>聽說他名號的由來是因為端了戚容老巢而得的。<br>愛好：謝憐<br>建議：不要惹他的殿下。還有不要提到綠色那位。<br></div>
+				</div>
+				<div class="col-sm-6">
+					<div id="Whitewhite">
+						<img src="white.png" alt="白衣禍世" class="image a-2" height="141">
+						<div id='title_Whitewhite'>
+							<h3><big><b>白衣禍世</b></big></h3>
+						</div>
+					</div>
+					<div id="text_Whitewhite">又稱白無相。<br>本名：（保密）<br>仙樂滅國元兇<br>愛好：教育（？）謝憐<br>建議：極危險人物，不要靠近！還有不要在謝憐面前提到他。<br>其他身份：（保密）<br></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6">
+					<div id="Blackblack">
+						<img src="black.png" alt="黑水沉舟" class="a-3" height="141">
+						<div id='title_Blackblack'>
+							<h3><big><b>黑水沉舟</b></big></h3>
+						</div>
+					</div>
+					<div id="text_Blackblack">本名賀玄<br>一位生前遭遇很悲慘的書生。<br>欠了紅色那位很多很多很多很多很多很多錢。<br>愛好：吃<br>建議：別在他面前提師無渡。<br>其他身份：（保密）（保密）<br></div>
+				</div>
+				<div class="col-sm-6">
+					<div id="Greengreen">
+						<img src="greenMan.png" alt="戚容" class="image a-4" width="200" id='badman'>
+						<div id='title_Greengreen'>
+							<h3><big><b>青燈夜遊</b></big></h3>
+						</div>
+					</div>
+					<div id="text_Greengreen">本名戚容<br>謝憐表弟。對，你沒看錯。<br>其實是“近絕”而已。審美極差，性格極瘋<br>愛好：裝逼<br>建議：不想被氣死就遠離他。想打他就找花城。<br>***別把游標停在他臉上<br></div>
+				</div>
+			</div>
+			<div class='three_fool'>
+				<h3><b>仙樂三傻 （排名不分先後）</b></h3>
+			</div>
+			<div class="row">
+				<div class="col-sm-4">
+					<div id="Fengxing">
+						<img src="img_fon_shin.png" alt="風信" class="image b-1" height="125">
+						<div id='title_Fengxing'>
+							<h3><big><b>風信</b></big></h3>
+						</div>
+					</div>
+					<div id="text_Fengxing"><b>南陽將軍</b><br>原本是仙樂太子的貼身侍衛，後來也渡劫飛升。<br>性情暴躁，愛罵髒字，常常跟慕情打架，偶爾也會還嘴。<br>對太子殿下很是忠誠。<br>注意：不要提到“俱陽將軍”四個字。<br>名言：“我*了！我真是*了！！”<br></div>
+				</div>
+				<div class="col-sm-4">
+					<div id="Muqing">
+						<img src="img_mu_chin.png" alt="慕情" class="image b-2" height="125">
+						<div id='title_Muqing'>
+							<h3><big><b>慕情</b></big></h3>
+						</div>
+					</div>
+					<div id="text_Muqing"><b>玄真將軍</b><br>原本是仙樂太子的貼身侍從，後來自己渡劫飛升。<br>性格敏感多疑，嘴毒，常常激怒風信然後跟他打架。<br>對謝憐的感想很複雜。<br>注意：不要提到掃地或給他掃帚。<br>名言：“你是人間正道～你是世界中心～”<br></div>
+				</div>
+				<div class="col-sm-4">
+					<div id="Taizi">
+						<img src="taizi.png" alt="你猜" class="image b-3" height="125">
+						<div id='title_Taizi'>
+							<h3><big><b>你猜</b></big></h3>
+						</div>
+					</div>
+					<div id="text_Taizi">就是太子殿下啊<br>這還要說？</div>
+					
+				</div>
+			</div>
+			<div class="other_role">
+				<h3><b>其他角色</b></h3>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<div id="Junwu">
+						<img src="junwu.png" alt="君吾" class="image c-1" width="150">
+						<div id='title_Junwu'>
+							<h3><b>君吾</b></h3>
+							<p>神武大帝</p>
+						</div>
+					</div>
+					<div id="text_Junwu">仙京之主<br>很喜歡仙樂太子，想讓他成為自己的傳人。<br>注意：不要用“紅鏡劍”照他，除非你是謝憐。<br>其他身份：（保密）（保密）<br></div>
+				</div>
+				<div class="col-sm-3">
+					<div id="Lingwen">
+						<img src="Lingwen.png" alt="靈文" class="c-2" height="114">
+						<div id='title_Lingwen'>
+							<h3><b>靈文</b></h3>
+							<p>上天庭第一文神<p>
+						</div>
+					</div>
+					<div id="text_Lingwen">高冷女神。<br>批不完的公文，算不完的帳。<br>非常非常忙碌，常年面無表情，黑眼圈嚴重。<br>通靈口令：靈文靈文百事通<br>注意：她讓你穿上的衣服千萬別穿。<br></div>
+				</div>
+				<div class="col-sm-3">
+					<div id="Qingxuan">
+						<img src="FS-2.png" alt="師青玄" class="image c-3" height="114" id='Qingxuan-img'>
+						<div id='title_Qingxuan'>
+							<h3><b>師青玄</b></h3>
+							<p>風師大人</p>
+						</div>
+					</div>
+					<div id="text_Qingxuan">風流儒雅，神采飛揚，天界第一撒錢小能手<br>人如其號，性情如風，人緣非常好，有俠義心腸。<br>飛升名景---<b>少君傾酒</b><br>哥哥是水師，有輕微哥控傾向<br>
+											別稱：<u><span id='FSNN'>風師娘娘</span></u><br>法器：風師扇<br>通靈口令：<br>風師大人天縱奇才，風師大人風趣瀟灑;<br>風師大人正直善良，風師大人年方二八!<br></div>
+				</div>
+				<div class="col-sm-3">
+					<div id="Mingyi">
+						<img src="img_ming_yi.png" alt="明儀" class="image c-4" height="114">
+						<div id='title_Mingyi'>
+							<h3><b>明儀</b></h3>
+							<p>地師大人</p>
+						</div>
+					</div>
+					<div id="text_Mingyi">一位能工巧匠，人間無論修橋鋪路、開山築屋都要祭拜地師。<br>師青玄的好朋友之一（？）<br>武器：月牙鏟<br>注意：最好辨明真身（你懂我懂大家懂）<br></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<div id="Wudo">
+						<img src="water.png" alt="師無渡" class="c-5" width="160">
+						<div id='title_Wudo'>
+							<h3><b>師無渡</b></h3>
+							<p>水師大人</p>
+						</div>
+					</div>
+					<div id="text_Wudo">性情跋扈，別稱：水橫天<br>走水路一定要拜水師，不然船會翻。<br>風師的哥哥，重度弟控。<br>注意：如果不想跟黑色那位為敵，不要幫水師。<br></div>
+				</div>
+				<div class="col-sm-3">
+					<div id="RainGod">
+						<img src="rain.png" alt="雨師" class="image c-6" height="114">
+						<div id='title_RainGod'>
+							<h3><b>雨師</b></h3>
+							<p>雨龍國公主</p>
+						</div>
+					</div>
+					<div id="text_RainGod">一位與世無爭種田度日的神官。慈悲淡然，有真正的神性。<br>飛升名景--<b>公主自刎。</b><br>裴茗看到她會退避三舍，因為心虛（？）<br></div>
+				</div>
+				<div class="col-sm-3">
+					<div id="Payming">
+						<img src="payming.png" alt="裴茗" class="image c-7" height="114">
+						<div id='title_Payming'>
+							<h3><b>裴茗</b></h3>
+							<p>明光將軍</p>
+						</div>
+					</div>
+					<div id="text_Payming">光明磊落，為人驕傲，同時也是三界皆知的花心大蘿蔔。<br>人生樂趣就是打勝仗和美人。<br>結識花憐二人後新增一項--八卦。<br>飛升名景--<b>將軍折劍</b><br></div>
+				</div>
+				<div class="col-sm-3">
+					<div id="Xiaopay">
+						<img src="img_pei_shu.png" alt="裴宿" class="image c-8" height="114">
+						<div id='title_Xiaopay'>
+							<h3><b>裴宿</b></h3>
+							<p>小裴將軍</p>
+						</div>
+					</div>
+					<div id="text_Xiaopay">明光殿副位神官<br>裴茗的後人。跟他相反，是一位癡情種。<br>注意：不要經過半月關。若一定要過，先找到半月幫助你<br></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<div id="Mayniangqing">
+						<img src="may.png" alt="梅念卿" class="image c-9" height="114">
+						<div id='title_Mayniangqing'>
+							<h3><b>梅念卿</b></h3>
+							<p>仙樂國師</p>
+						</div>
+					</div>
+					<div id="text_Mayniangqing">謝憐的師父<br>喜歡打牌，這時候喊他他是聽不到的。<br>其他身份：（保密）<br></div>
+				</div>
+				<div class="col-sm-3">
+					<div id="Langqianqu">
+						<img src="img_lang_qianqiu.png" alt="郎千秋" class="image c-10" height="114">
+						<div id='title_Langqianqu'>
+							<h3><b>郎千秋</b></h3>
+							<p>泰華殿下</p>
+						</div>
+					</div>
+					<div id="text_Langqianqu">永安國太子<br>個性衝動，為人正直有義。<br>喜歡睡覺，尤其天庭開會的時候。<br>注意：別提芳心國師。<br></div>
+				</div>
+				<div class="col-sm-3">
+					<div id="Quanyizen">
+						<img src="quang.png" alt="權一真" class="image c-11" height="114">
+						<div id='title_Quanyizen'>
+							<h3><b>權一真</b></h3>
+							<p>奇英殿下</p>
+						</div>
+					</div>
+					<div id="text_Quanyizen">天賦異稟，一根筋，個性耿直，我行我素。<br>興趣是找人切磋，常常毆打自己的信徒。<br></div>
+				</div>
+				<div class="col-sm-3">
+					<div id="Bangyue">
+						<img src="img_ban_yue.png" alt="半月" class="image c-12" height="114">
+						<div id='title_Bangyue'>
+							<h3><b>半月</b></h3>
+							<p>半月國國師</p>
+						</div>
+					</div>
+					<div id="text_Bangyue">跟裴宿、謝憐相識，死後一直用法術困住半月國的妖怪士兵，不讓他們出來害人。</div>
+				</div>
+			</div>
+			<div class='HightLight'>
+				<h3><b>名場面回顧</b></h3>
+			</div>
+			<div class="table-responsive">
+				<table class="table table-hover">
+				<tbody>
+					<tr class='shanwudajie'>
+						<td><b>上元佳節，神武大街，驚鴻一瞥，百世淪陷。</b></td>
+					</tr>
+					<tr class='yinianqiao'>
+						<td><b>一念橋逢魔遇仙</b></td>
+					</tr>
+					<tr class='sandanxianjing'>
+						<td><b>仙樂太子，三登仙京</b></td>
+					</tr>
+					<tr class='yujunshan'>
+						<td><b>與君山太子上花轎</b></td>
+					</tr>
+					<tr class='firstmeet'>
+						<td><b>菩薺村牛車初遇，衣紅勝楓膚白若雪</b></td>
+					</tr>
+					<tr class='jilefun'>
+						<td><b>極樂坊玲瓏骰，鬼王真容現</b></td>
+					</tr>
+					<tr class='light3000'>
+						<td><b>上元燈會，為你明燈三千</b></td>
+					</tr>
+					<tr class='rainflower'>
+						<td><b>世中逢爾，雨中逢花</b></td>
+					</tr>
+					<tr class='wanshenku'>
+						<td><b>萬神窟萬神像，鬼王身世顯</b></td>
+					</tr>
+				</tbody>
+				</table>
+			</div>
+		</div>
+	
+	<!--名場面全螢幕-->
+	<div class="shanwudajie-image">
+        <img src="SWDJ.jpg" alt="神武大街" class='HightLightPic'>
+    </div>
+	<div class="yinianqiao-image">
+        <img src="YNQ.jpg" alt="一念橋" class='HightLightPic'>
+    </div>
+	<div class="sandanxianjing-image">
+        <img src="SDXJ.jpeg" alt="三登仙京" class='HightLightPic'>
+    </div>
+	<div class="yujunshan-image">
+        <img src="YJS.jpg" alt="與君山" class='HightLightPic'>
+    </div>
+	<div class="firstmeet-image">
+        <img src="firstmeet.jpg" alt="初見" class='HightLightPic'>
+    </div>
+	<div class="jilefun-image">
+        <img src="JLF.jpg" alt="極樂坊" class='HightLightPic'>
+    </div>
+	<div class="light3000-image">
+        <img src="MDSQ.jpeg" alt="明燈三千" class='HightLightPic'>
+    </div>
+	<div class="rainflower-image">
+        <img src="YZFH.jpg" alt="雨中逢花" class='HightLightPic'>
+    </div>
+	<div class="wanshenku-image">
+        <img src="WSK.jpg" alt="萬神窟" class='HightLightPic'>
+    </div>
+	
+	</body>
+</html>

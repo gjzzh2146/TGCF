@@ -1,0 +1,642 @@
+body {
+	background-image:url("background1.jpg") ;
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	background-size: cover;
+}
+/*初始dialog*/
+#initial_dialog{
+    border: 1px solid #ccc;
+    padding: 2em;
+    width: 600px;
+    max-width: 80%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+#initial_dialog p {
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+}
+#initial_button {
+    display: block;
+    margin-left: auto;
+    padding: 0.5em 1em;
+    border: 1px solid #FA8539;
+    background-color: #FA8539;
+    color: white;
+    border-radius: 1px;
+    cursor: pointer;
+    font-size: 1em;
+}
+#initial_button:hover {
+    background-color: #0056b3;
+}
+/*主題欄*/
+.topColumn{
+	border-radius: 5px;
+	height: 150px;
+	background: linear-gradient(to right,rgba(247, 80, 0, 0.7), rgba(247, 80, 0, 1),rgba(255, 128, 0, 1),rgba(255, 146, 36, 1),rgba(254, 170, 13, 1),
+							 rgba(254, 170, 13, 1),rgba(255, 146, 36, 1),rgba(255, 128, 0, 1),rgba(247, 80, 0, 1),rgba(247, 80, 0, 0.7)); /* 使用线性渐变创建背景 */
+	box-shadow: 0 0 20px 10px rgba(247, 80, 0, 0.7); /* 使用模糊阴影来模糊边界 */
+	display: flex;
+    justify-content: center; /* 将图片放在左右两侧 */
+    align-items: center; /* 垂直居中对齐 */
+    position: relative;
+	overflow: hidden; /* 隐藏超出容器的部分 */
+}
+.topColumn::before, .topColumn::after  {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-size: cover; /* 背景图片覆盖整个容器 */
+    opacity: 1; /* 设置背景图片透明度 */
+    z-index: 0; /* 确保背景图片在最底层 */
+}
+.topColumn::before {
+	left: 0;
+	background: url("Golden_pieces.png") no-repeat center center; /* 左侧背景图片路径 */
+}
+.topColumn::after {
+	right: 0;
+	background: url("Golden_pieces.png") no-repeat center center; /* 右侧背景图片路径 */
+	display: flex;
+}
+.left-img {
+	top:15px;
+    height: 130px; /* 左图放大 */
+    margin-right: 10px; /* 左右图片间隙 */
+	z-index: 1; /* 确保图片在背景图片之上 */
+    }
+.right-img {
+    height: 55px; /* 右图缩小 */
+    position: absolute;
+	right: 280px; /* 距离右侧一定距离 */
+	bottom: 20px; /* 作为下标放置 */
+	z-index: 1; /* 确保图片在背景图片之上 */
+        }
+#author,#ps{
+	text-align: right;
+	padding-right: 50px;
+	margin:0;
+}
+/*故事簡介*/
+.story {
+	position: relative;
+	text-align:center;
+	padding: 20px;
+	background-size: cover;
+	border-radius: 10px;
+	background-color:rgba(255, 255, 255, 0.5); /* 使用 RGBA 颜色值设置背景颜色的透明度 */
+	margin:0;
+	cursor: pointer; /* 添加指针光标，指示可点击 */
+}
+.story::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 0;
+}
+.story h3 {
+	position: relative;
+	z-index: 1;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.story_text{
+	position: relative;
+	z-index: 1;
+	padding: 15px;
+	font-size: 1vw;
+	font-weight: bold; /* 设置粗体 */
+	line-height: 1.5vw;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.story span {
+  opacity: 0;
+}
+/*標題、邊框統一設定*/
+.role,.Ghost,.three_fool,.other_role,.HightLight{
+	text-align:center;
+}
+.col-sm-6,.col-sm-4,.col-sm-3{
+    border-radius: 20px; /* 添加圆角 */
+    padding: 10px; /* 添加内边距，确保内容不紧贴边框 */
+	cursor: pointer; /* 添加指针光标，指示可点击 */
+}
+ /*各圖片位置設定*/ 
+.aaa,.bbb{
+	margin-right:75px;
+}
+.a-1{
+	margin-left:30px;
+	margin-right:130px;
+}
+.a-2{
+	margin-left:5px;
+	margin-right:120px;
+}
+.a-3{
+	margin-left:5px;
+	margin-right:90px;
+}
+.a-4{
+	margin-right:140px;
+}
+.b-1{
+	margin-left:10px;
+	margin-right:40px;
+}
+.b-2{
+	margin-right:20px;
+}
+.b-3{
+	margin-left:30px;
+	margin-right:80px;
+}
+.c-1{
+	margin-right:20px;
+}
+.c-2{
+	margin-right:15px; 
+}
+.c-3{
+	margin-left:25px;
+	margin-right:45px;
+}
+.c-4{
+	margin-right: 20px; 
+}
+.c-5{
+	margin-right: 20px; 
+}
+.c-6{
+	margin-left:5px;
+	margin-right:25px;
+}
+.c-7{
+	margin-left:25px;
+	margin-right:45px;
+}
+.c-8{
+	margin-right:5px;
+}
+.c-9{
+	margin-left:15px;
+	margin-right:60px;
+}
+.c-10{
+	margin-right:10px;
+}
+.c-11{
+	margin-left:20px;
+	margin-right:35px;
+}
+.c-12{
+	margin-right:10px;
+}
+/*---------------------------------謝憐------------------------------------------*/
+#Xieliang{
+	outline: 3px solid white; /* 添加邊框 */
+    /*outline-offset: -5px; /* 邊框向內縮進，創造出空隙效果 */
+	border-radius: 20px; /* 添加圆角 */
+	display: flex;
+    align-items: center;
+    background: linear-gradient(to right,#93DFFE,#F2FCFE); /* 背景顏色 */
+}
+#title_Xieliang {flex: 1; /* 让文字部分占据剩余空间 */}
+#text_Xieliang{
+	background-color:rgba(255, 255, 255, 0.5);
+	padding:50px;
+    display:none;
+}
+/*拯救蒼生dialog*/
+#roleplay_dialog {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #FFF8E2;
+            padding: 20px;
+            border: 1px solid #FFF8E2;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+}
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+#roleplay_dialog button {
+	margin:1px;
+	background-color: #FFDE70;
+	border: 1px solid #FFDE70; /* 修正 border 定义 */
+    padding: 5px;
+    float: right; /* 将按钮向右对齐 */
+    margin-top: 20px; /* 调整按钮与上方文字之间的距离，可以根据需要调整这个值 */
+	margin-left: 5px; /* 如果有多个按钮，设置它们之间的间距 */
+}
+/*黑暗料理dialog*/
+#cook_dialog {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #DCDCDC;
+            padding: 20px;
+            border: 1px solid #DCDCDC;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+}
+#cook_dialog button {
+	margin:1px;
+	color:#DCDCDC;
+	background-color: #4F5B53;
+	border: 1px solid #4F5B53; /* 修正 border 定义 */
+    padding: 5px;
+    float: right; /* 将按钮向右对齐 */
+    margin-top: 20px; /* 调整按钮与上方文字之间的距离，可以根据需要调整这个值 */
+	margin-left: 5px; /* 如果有多个按钮，设置它们之间的间距 */
+}
+#cook_decline_dialog{
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #DCDCDC;
+	padding: 20px;
+	border: 1px solid #DCDCDC;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	z-index: 1000;
+}
+/*---------------------------------花城------------------------------------------*/
+#Huacheng{
+	outline: 3px solid white;
+	border-radius: 20px; /* 添加圆角 */
+	display: flex;
+    align-items: center;
+	background: linear-gradient(to right,#CC1717,#FFE3E3); 
+}
+#title_Huacheng {flex: 1; /* 让文字部分占据剩余空间 */}
+#text_Huacheng{
+	background-color:rgba(255, 255, 255, 0.5);
+	padding:50px;
+    display:none;
+}
+/*萬神窟dialog*/
+#pazzle_dialog,#pazzle_decline_dialog {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #F6EBFF;
+            padding: 20px;
+            border: 1px solid #F6EBFF;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+}
+#pazzle_dialog button {
+	margin:1px;
+	color:#E9E0F1;
+	background-color: #6E309C;
+	border: 1px solid #6E309C; /* 修正 border 定义 */
+    padding: 5px;
+    float: right; /* 将按钮向右对齐 */
+    margin-top: 20px; /* 调整按钮与上方文字之间的距离，可以根据需要调整这个值 */
+	margin-left: 5px; /* 如果有多个按钮，设置它们之间的间距 */
+}
+/*---------------------------------血雨探花------------------------------------------*/
+#Redred{
+	outline: 3px solid white; /* 添加邊框 */
+	border-radius: 20px; /* 添加圆角 */
+	display: flex;
+    align-items: center;
+	background: linear-gradient(to right,#6E0000,#A91B1B,#C74545); 
+}
+#title_Redred{flex: 1; /* 让文字部分占据剩余空间 */}
+#text_Redred{
+	background-color:rgba(255, 255, 255, 0.5);
+	padding:50px;
+    display:none;
+}
+/*---------------------------------白無相------------------------------------------*/
+#Whitewhite{
+	outline: 3px solid white; /* 添加邊框 */
+	border-radius: 20px; /* 添加圆角 */
+	display: flex;
+    align-items: center;
+	background: linear-gradient(to right,#4E4D4D,#C7C7C7); 
+}
+#title_Whitewhite{flex: 1; /* 让文字部分占据剩余空间 */}
+#text_Whitewhite{
+	background-color:rgba(255, 255, 255, 0.5);
+	padding:50px;
+    display:none;
+}
+/*---------------------------------黑水------------------------------------------*/
+#Blackblack{
+	outline: 3px solid white; /* 添加邊框 */
+	border-radius: 20px; /* 添加圆角 */
+	display: flex;
+    align-items: center;
+	background: linear-gradient(to right,#030061,#161284,#605CD0); 
+}
+#title_Blackblack{flex: 1; /* 让文字部分占据剩余空间 */}
+#text_Blackblack{
+	background-color:rgba(255, 255, 255, 0.5);
+	padding:50px;
+    display:none;
+}
+/*---------------------------------戚容------------------------------------------*/
+#Greengreen{
+	outline: 3px solid white; /* 添加邊框 */
+	border-radius: 20px; /* 添加圆角 */
+	display: flex;
+    align-items: center;
+	background: linear-gradient(to right,#016819,#5ABA71); 
+}
+#title_Greengreen{flex: 1; /* 让文字部分占据剩余空间 */}
+#text_Greengreen{
+	background-color:rgba(255, 255, 255, 0.5);
+	padding:50px;
+    display:none;
+}
+/*打戚容dialog*/
+#badman_dialog,#badman_accept_dialog,#badman_run_dialog {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #CDF3ED;
+            padding: 20px;
+            border: 1px solid #CDF3ED;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+}
+#badman_dialog button {
+	margin:1px;
+	color:#CDF3ED;
+	background-color: #3C9082;
+	border: 1px solid #3C9082; /* 修正 border 定义 */
+    padding: 5px;
+    float: right; /* 将按钮向右对齐 */
+    margin-top: 20px; /* 调整按钮与上方文字之间的距离，可以根据需要调整这个值 */
+	margin-left: 5px; /* 如果有多个按钮，设置它们之间的间距 */
+}
+#badman_accept_dialog button {
+	margin:1px;
+	color:#CDF3ED;
+	background-color: #3C9082;
+	border: 1px solid #3C9082; /* 修正 border 定义 */
+    padding: 5px;
+    float: right; /* 将按钮向右对齐 */
+    margin-top: 20px; /* 调整按钮与上方文字之间的距离，可以根据需要调整这个值 */
+	margin-left: 5px; /* 如果有多个按钮，设置它们之间的间距 */
+}
+/*---------------------------------風信------------------------------------------*/
+#Fengxing{
+	outline: 3px solid white;
+	border-radius: 20px; /* 添加圆角 */
+	display: flex;
+    align-items: center;
+	background: linear-gradient(to right,#D7822C,#BF3232); 
+}
+#title_Fengxing{flex: 1; /* 让文字部分占据剩余空间 */}
+#text_Fengxing{
+	background-color:rgba(255, 255, 255, 0.5);
+	padding:50px;
+    display:none;
+}
+/*---------------------------------慕情------------------------------------------*/
+#Muqing{
+	outline: 3px solid white;
+	border-radius: 20px; /* 添加圆角 */
+	display: flex;
+    align-items: center;
+	background: linear-gradient(to right,#D7822C,#7597CB); 
+}
+#title_Muqing{flex: 1; /* 让文字部分占据剩余空间 */}
+#text_Muqing{
+	background-color:rgba(255, 255, 255, 0.5);
+	padding:50px;
+    display:none;
+}
+/*---------------------------------太子殿下哈哈哈------------------------------------------*/
+#Taizi{
+	outline: 3px solid white;
+	border-radius: 20px; /* 添加圆角 */
+	display: flex;
+    align-items: center;
+	background: linear-gradient(to right,#D7602C,#F5D649); 
+}
+#title_Taizi{flex: 1; /* 让文字部分占据剩余空间 */}
+#text_Taizi{
+	background-color:rgba(255, 255, 255, 0.5);
+	padding:50px;
+    display:none;
+	text-align:center;
+}
+/*---------------------------------君吾------------------------------------------*/
+#Junwu{
+	outline: 3px solid white;
+	border-radius: 20px; /* 添加圆角 */
+	display: flex;
+    align-items: center;
+	background: linear-gradient(to right,#E6D82E,#F7F3C3); 
+}
+#title_Junwu{flex: 1; /* 让文字部分占据剩余空间 */}
+#text_Junwu{
+	background-color:rgba(255, 255, 255, 0.5);
+	padding:50px;
+    display:none;
+}
+/*---------------------------------靈文------------------------------------------*/
+#Lingwen{
+	outline: 3px solid white;
+	border-radius: 20px; /* 添加圆角 */
+	display: flex;
+    align-items: center;
+	background: linear-gradient(to right,#7234B4,#DAD2E2); 
+}
+#title_Lingwen{flex: 1; /* 让文字部分占据剩余空间 */}
+#text_Lingwen{
+	background-color:rgba(255, 255, 255, 0.5);
+	padding:50px;
+    display:none;
+}
+/*---------------------------------師青玄------------------------------------------*/
+#Qingxuan{
+	outline: 3px solid white;
+	border-radius: 20px; /* 添加圆角 */
+	display: flex;
+    align-items: center;
+	background: linear-gradient(to right,#5EE8E1,#DCFFFD); 
+}
+#title_Qingxuan{flex: 1; /* 让文字部分占据剩余空间 */}
+#text_Qingxuan{
+	background-color:rgba(255, 255, 255, 0.5);
+	padding:50px;
+    display:none;
+}
+/*---------------------------------明儀------------------------------------------*/
+#Mingyi{
+	outline: 3px solid white;
+	border-radius: 20px; /* 添加圆角 */
+	display: flex;
+    align-items: center;
+	background: linear-gradient(to right,#923C5B,#CB99AB); 
+}
+#title_Mingyi{flex: 1; /* 让文字部分占据剩余空间 */}
+#text_Mingyi{
+	background-color:rgba(255, 255, 255, 0.5);
+	padding:50px;
+    display:none;
+}
+/*---------------------------------水師------------------------------------------*/
+#Wudo{
+	outline: 3px solid white;
+	border-radius: 20px; /* 添加圆角 */
+	display: flex;
+    align-items: center;
+	background: linear-gradient(to right,#0048CF,#CDDFFF); 
+}
+#title_Wudo{flex: 1; /* 让文字部分占据剩余空间 */}
+#text_Wudo{
+	background-color:rgba(255, 255, 255, 0.5);
+	padding:50px;
+    display:none;
+}
+/*---------------------------------雨師------------------------------------------*/
+#RainGod{
+	outline: 3px solid white;
+	border-radius: 20px; /* 添加圆角 */
+	display: flex;
+    align-items: center;
+	background: linear-gradient(to right,#23B879,#B1E8D1); 
+}
+#title_RainGod{flex: 1; /* 让文字部分占据剩余空间 */}
+#text_RainGod{
+	background-color:rgba(255, 255, 255, 0.5);
+	padding:50px;
+    display:none;
+}
+/*---------------------------------裴茗------------------------------------------*/
+#Payming{
+	outline: 3px solid white;
+	border-radius: 20px; /* 添加圆角 */
+	display: flex;
+    align-items: center;
+	background: linear-gradient(to right,#927A58,#D8C4A7); 
+}
+#title_Payming{flex: 1; /* 让文字部分占据剩余空间 */}
+#text_Payming{
+	background-color:rgba(255, 255, 255, 0.5);
+	padding:50px;
+    display:none;
+}
+/*---------------------------------小裴------------------------------------------*/
+#Xiaopay{
+	outline: 3px solid white;
+	border-radius: 20px; /* 添加圆角 */
+	display: flex;
+    align-items: center;
+	background: linear-gradient(to right,#57B0E3,#D1ECFC); 
+}
+#title_Xiaopay{flex: 1; /* 让文字部分占据剩余空间 */}
+#text_Xiaopay{
+	background-color:rgba(255, 255, 255, 0.5);
+	padding:50px;
+    display:none;
+}
+/*---------------------------------梅念卿------------------------------------------*/
+#Mayniangqing{
+	outline: 3px solid white;
+	border-radius: 20px; /* 添加圆角 */
+	display: flex;
+    align-items: center;
+	background: linear-gradient(to right,#4E3664,#BAA8CB); 
+}
+#title_Mayniangqing{flex: 1; /* 让文字部分占据剩余空间 */}
+#text_Mayniangqing{
+	background-color:rgba(255, 255, 255, 0.5);
+	padding:50px;
+    display:none;
+}
+/*---------------------------------郎千秋------------------------------------------*/
+#Langqianqu{
+	outline: 3px solid white;
+	border-radius: 20px; /* 添加圆角 */
+	display: flex;
+    align-items: center;
+	background: linear-gradient(to right,#B47215,#FADDC2); 
+}
+#title_Langqianqu{flex: 1; /* 让文字部分占据剩余空间 */}
+#text_Langqianqu{
+	background-color:rgba(255, 255, 255, 0.5);
+	padding:50px;
+    display:none;
+}
+/*---------------------------------權一真------------------------------------------*/
+#Quanyizen{
+	outline: 3px solid white;
+	border-radius: 20px; /* 添加圆角 */
+	display: flex;
+    align-items: center;
+	background: linear-gradient(to right,#FF8E3A,#FFDC65); 
+}
+#title_Quanyizen{flex: 1; /* 让文字部分占据剩余空间 */}
+#text_Quanyizen{
+	background-color:rgba(255, 255, 255, 0.5);
+	padding:50px;
+    display:none;
+}
+/*---------------------------------半月------------------------------------------*/
+#Bangyue{
+	outline: 3px solid white;
+	border-radius: 20px; /* 添加圆角 */
+	display: flex;
+    align-items: center;
+	background: linear-gradient(to right,#471D6E,#A59DEA); 
+}
+#title_Bangyue{flex: 1; /* 让文字部分占据剩余空间 */}
+#text_Bangyue{
+	background-color:rgba(255, 255, 255, 0.5);
+	padding:50px;
+    display:none;
+}
+/*------------------------------------------------------------名場面回顧------------------------------------------*/
+.shanwudajie-image,.yinianqiao-image,.sandanxianjing-image,.yujunshan-image,.firstmeet-image,.jilefun-image,
+.light3000-image,.rainflower-image,.wanshenku-image {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	z-index: 100;
+	text-align: center; /* Center the image horizontally */
+}
+.HightLightPic {
+	display: inline-block;
+	max-width: 100%;
+	max-height: 100%;
+	margin: auto;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%); /* Center the image vertically */
+}
